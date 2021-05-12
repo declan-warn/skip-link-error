@@ -45,11 +45,9 @@ const RightSidebar = (props: SlotWidthProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rightSidebarWidth, id]);
 
-  useEffect(() => {
-    if (id && skipLinkTitle) {
-      registerSkipLink({ id, skipLinkTitle });
-    }
-  }, [id, skipLinkTitle, registerSkipLink]);
+  if (id && skipLinkTitle) {
+    registerSkipLink({ id, skipLinkTitle });
+  }
 
   return (
     <div

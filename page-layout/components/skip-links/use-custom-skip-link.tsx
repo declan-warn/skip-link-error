@@ -10,8 +10,9 @@ export const useCustomSkipLink = (
 ) => {
   const { registerSkipLink, unregisterSkipLink } = useSkipLinks();
 
+  registerSkipLink({ id, skipLinkTitle, listIndex });
+
   useEffect(() => {
-    registerSkipLink({ id, skipLinkTitle, listIndex });
     return () => {
       unregisterSkipLink(id);
     };

@@ -36,12 +36,9 @@ const LeftPanel = (props: SlotWidthProps) => {
 
   const { registerSkipLink, unregisterSkipLink } = useSkipLinks();
 
-  useEffect(() => {
-    if (id && skipLinkTitle) {
-      registerSkipLink({ id, skipLinkTitle });
-    }
-  }, [id, skipLinkTitle, registerSkipLink]);
-
+  if (id && skipLinkTitle) {
+    registerSkipLink({ id, skipLinkTitle });
+  }
   useEffect(() => {
     publishGridState({ [VAR_LEFT_PANEL_WIDTH]: leftPanelWidth });
     return () => {

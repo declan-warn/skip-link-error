@@ -20,11 +20,9 @@ const Main = (props: SlotWidthProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  useEffect(() => {
-    if (id && skipLinkTitle) {
-      registerSkipLink({ id, skipLinkTitle });
-    }
-  }, [id, skipLinkTitle, registerSkipLink]);
+  if (id && skipLinkTitle) {
+    registerSkipLink({ id, skipLinkTitle });
+  }
 
   return (
     <div

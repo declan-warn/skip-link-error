@@ -271,11 +271,9 @@ const LeftSidebar = (props: LeftSidebarProps) => {
       );
   };
 
-  useEffect(() => {
-    if (id && skipLinkTitle) {
-      registerSkipLink({ id, skipLinkTitle });
-    }
-  }, [id, skipLinkTitle, registerSkipLink]);
+  if (id && skipLinkTitle) {
+    registerSkipLink({ id, skipLinkTitle });
+  }
 
   const onMouseLeave = (event: ReactMouseEvent) => {
     const isMouseOnResizeButton =
